@@ -2,67 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#333333">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#333333">
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#333333">
+    <script type="text/javascript" src="/head.js"></script>
     <title>OgelGames</title>
     <style>
-        body {
-            font-size: 120%;
-            font-family: "Source Code Pro", monospace;
-            color: #aaaaaa;
-            background-color: #333333;
-            text-align: center;
-        }
-
         .cursor::after {
             content: '';
             display: inline-block;
-            margin-left: 4px;
+            margin-left: 2px;
             background-color: #aaaaaa;
             animation-name: blink;
-            animation-duration: 0.5s;
+            animation-duration: 0.6s;
             animation-iteration-count: infinite;
         }
-
         p.cursor::after {
             height: 14px;
-            width: 4px;
+            width: 2px;
         }
-
         @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            49% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
+            0% {opacity: 1;}
+            49% {opacity: 1;}
+            50% {opacity: 0;}
+            100% {opacity: 0;}
         }
     </style>
 </head>
 
 <body>
-    <h1>&LeftAngleBracket; Testing in progress &RightAngleBracket;</h1>
-    <p class="cursor" id="output"></p>
+    <h1>&lt; Testing in progress &gt;</h1>
     <br>
+    <p class="cursor" id="output"></p>
     <script>
         var text = [
             "This page is only here as something for you to look at while things are being tested.",
@@ -78,7 +46,6 @@
             "The creator of this page also makes games sometimes, you should go and play one!",
         ]
         var wait = 60;
-
         var curText = ""
         var i = 0;
         var line = 0;
@@ -116,5 +83,4 @@
         setTimeout(writeNext, 3000)
     </script>
 </body>
-
 </html>
