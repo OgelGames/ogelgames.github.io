@@ -68,15 +68,14 @@
             "This page is only here as something for you to look at while things are being tested.",
             "Yep, that's all that is here, nothing else.",
             "You don't need stay any longer, you may go.",
-            "...",
             "Really, you should go, there is nothing here except you and me.",
             "...",
             "Okay, how long are you going to stare at this page?",
             "I already said there is nothing here.",
             "...",
-            "Ok, you must be bored or something to be still here.",
-            "Maybe you should play a game or something?",
-            "I heard that the creator of this page also makes games sometimes, you should go and play one.",
+            "Uhh, you must be bored or something...",
+            "Maybe you should play a game?",
+            "The creator of this page also makes games sometimes, you should go and play one!",
         ]
         var wait = 60;
 
@@ -102,12 +101,12 @@
             if (i < curText.length) {
                 addText(curText.charAt(i));
                 i++;
-                setTimeout(writeLine, Math.floor(Math.random() * 30) + 30);
+                setTimeout(writeLine, Math.floor(Math.random() * 50) + 30);
             } else {
                 i = 0;
                 addText("<br><br>")
                 if (curText == "...") {
-                    setTimeout(writeNext, 2000)
+                    setTimeout(writeNext, 3000)
                 } else {
                     setTimeout(writeNext, wait * curText.length)
                 }
