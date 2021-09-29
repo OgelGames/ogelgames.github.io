@@ -1,0 +1,67 @@
+:root {
+  --spacing: max(1rem, calc(3vw + 3vh));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  color: #fff;
+  height: 100vh;
+  font-family: "Source Code Pro", monospace;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 2.5rem;
+  padding: var(--spacing);
+}
+
+#info-text {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+
+#death-text {
+  font-size: 1rem;
+  margin: var(--spacing) auto;
+  padding: 1rem 1rem;
+  background: #ccc;
+  color: #222;
+  min-width: min(600px, 100vw);
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+}
+
+#death-text:hover {
+  background: #aaa;
+}
+
+#credit {
+  text-align: center;
+  width: 100%;
+}
+
+#credit p {
+  font-size: 0.75rem;
+  color: #aaa;
+  padding: 1.5rem;
+  line-height: 1rem;
+}
+
+#credit a {
+  color: #fff;
+}

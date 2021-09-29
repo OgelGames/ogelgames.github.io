@@ -11,5 +11,4 @@ document.head.innerHTML = `
     <meta name="msapplication-TileColor" content="#333333">
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
     <meta name="theme-color" content="#333333">
-    <link rel="stylesheet" href="/stylesheet.css">
-`
+`;
