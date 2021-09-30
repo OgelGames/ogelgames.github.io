@@ -45,3 +45,9 @@ function randomize() {
   var txt = messages[Math.floor(Math.random() * messages.length)];
   document.getElementById("death-text").innerHTML = txt;
 }
+
+function copy() {
+  var txt = document.getElementById("death-text").innerHTML;
+  txt = txt.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
+  navigator.clipboard.writeText(txt);
+}

@@ -36,7 +36,7 @@ h1 {
 
 #death-text {
   font-size: 1rem;
-  margin: var(--spacing) auto;
+  margin: var(--spacing) auto 1rem;
   padding: 1rem 1rem;
   background: #ccc;
   color: #222;
@@ -44,10 +44,24 @@ h1 {
   cursor: pointer;
   user-select: none;
   display: inline-block;
+  border-radius: 5px;
+}
+
+#copy-btn {
+  background: #333;
+  padding: 0.3rem 1.5rem;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#copy-btn:hover {
+  background-color: #2e2e2e;
 }
 
 #death-text:hover {
-  background: #aaa;
+  background: #bbb;
 }
 
 #credit {
