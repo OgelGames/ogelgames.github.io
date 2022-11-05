@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <script type="text/javascript" src="/head.js"></script>
+    <link rel="stylesheet" href="/stylesheet.css" />
     <title>OgelGames</title>
     <style>
-        .cursor::after {
-            content: '';
-            display: inline-block;
-            margin-left: 2px;
-            background-color: #aaaaaa;
-            animation-name: blink;
-            animation-duration: 0.6s;
-            animation-iteration-count: infinite;
+      .cursor::after {
+        content: "";
+        display: inline-block;
+        margin-left: 2px;
+        background-color: #aaaaaa;
+        animation-name: blink;
+        animation-duration: 0.6s;
+        animation-iteration-count: infinite;
+      }
+      p.cursor::after {
+        height: 14px;
+        width: 2px;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 1;
         }
-        p.cursor::after {
-            height: 14px;
-            width: 2px;
+        49% {
+          opacity: 1;
         }
-        @keyframes blink {
-            0% {opacity: 1;}
-            49% {opacity: 1;}
-            50% {opacity: 0;}
-            100% {opacity: 0;}
+        50% {
+          opacity: 0;
         }
+        100% {
+          opacity: 0;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>&lt; Testing in progress &gt;</h1>
-    <br>
+    <br />
     <p class="cursor" id="output"></p>
     <script>
-        var text = [
-            "This page is only here as something for you to look at while things are being tested.",
-            "Yep, that's all that is here, nothing else.",
-            "You don't need stay any longer, you may go.",
-            "Really, you should go, there is nothing here except you and me.",
-            "...",
-            "Okay, how long are you going to stare at this page?",
-            "I already said there is nothing here.",
-            "...",
-            "Uhh, you must be bored or something...",
-            "Maybe you should play a game?",
-            "The creator of this page also makes games sometimes, you should go and play one!",
-        ]
-        var wait = 60;
-        var curText = ""
-        var i = 0;
-        var line = 0;
+      var text = [
+        "This page is only here as something for you to look at while things are being tested.",
+        "Yep, that's all that is here, nothing else.",
+        "You don't need stay any longer, you may go.",
+        "Really, you should go, there is nothing here except you and me.",
+        "...",
+        "Okay, how long are you going to stare at this page?",
+        "I already said there is nothing here.",
+        "...",
+        "Uhh, you must be bored or something...",
+        "Maybe you should play a game?",
+        "The creator of this page also makes games sometimes, you should go and play one!",
+      ];
+      var wait = 60;
+      var curText = "";
+      var i = 0;
+      var line = 0;
 
-        function addText(txt) {
-            document.getElementById("output").innerHTML += txt;
+      function addText(txt) {
+        document.getElementById("output").innerHTML += txt;
+      }
+
+      function writeNext() {
+        if (line < text.length) {
+          curText = text[line];
+          writeLine();
+          line++;
+        } else {
+          window.location.href = "https://ogelgames.itch.io/boomsticks";
         }
+      }
 
-        function writeNext() {
-            if (line < text.length) {
-                curText = text[line]
-                writeLine();
-                line++;
-            } else {
-                window.location.href = "https://ogelgames.itch.io/boomsticks";
-            }
+      function writeLine() {
+        if (i < curText.length) {
+          addText(curText.charAt(i));
+          i++;
+          setTimeout(writeLine, Math.floor(Math.random() * 50) + 30);
+        } else {
+          i = 0;
+          addText("<br><br>");
+          if (curText == "...") {
+            setTimeout(writeNext, 3000);
+          } else {
+            setTimeout(writeNext, wait * curText.length);
+          }
         }
+      }
 
-        function writeLine() {
-            if (i < curText.length) {
-                addText(curText.charAt(i));
-                i++;
-                setTimeout(writeLine, Math.floor(Math.random() * 50) + 30);
-            } else {
-                i = 0;
-                addText("<br><br>")
-                if (curText == "...") {
-                    setTimeout(writeNext, 3000)
-                } else {
-                    setTimeout(writeNext, wait * curText.length)
-                }
-            }
-        }
-
-        setTimeout(writeNext, 3000)
+      setTimeout(writeNext, 3000);
     </script>
-</body>
+  </body>
 </html>
